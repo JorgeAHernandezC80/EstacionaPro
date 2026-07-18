@@ -1,0 +1,38 @@
+{
+  "name": "estacionapro",
+  "version": "1.0.0",
+  "description": "EstacionaPro — Sistema web para empresa de estacionamiento de carros (frontend + backend + reservas en tiempo real)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "jest --runInBand"
+  },
+  "keywords": [
+    "parking",
+    "estacionamiento",
+    "reservas",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}

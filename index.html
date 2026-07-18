@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es" data-theme-default>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10294c" />
+
+  <title>EstacionaPro | Parqueadero inteligente y reservas de estacionamiento</title>
+  <meta name="description" content="EstacionaPro: parqueadero con reserva de plazas en línea, control de entrada y salida en tiempo real, plazas cubiertas, accesibles y con cargador eléctrico. Tarifas para clientes temporales y permanentes, con y sin membresía." />
+  <meta name="keywords" content="estacionamiento, parqueadero, reserva de estacionamiento, parking, plaza cubierta, cargador eléctrico, tarifas parqueadero, membresía estacionamiento" />
+  <meta name="author" content="EstacionaPro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.estacionapro.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EstacionaPro" />
+  <meta property="og:title" content="EstacionaPro | Parqueadero inteligente y reservas" />
+  <meta property="og:description" content="Reserva tu plaza en línea y gestiona entradas y salidas en tiempo real. Tarifas flexibles para clientes temporales y permanentes." />
+  <meta property="og:url" content="https://www.estacionapro.com/" />
+  <meta property="og:image" content="https://www.estacionapro.com/IMG/og-cover.png" />
+  <meta property="og:locale" content="es_CO" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EstacionaPro | Parqueadero inteligente y reservas" />
+  <meta name="twitter:description" content="Reserva tu plaza en línea y gestiona entradas y salidas en tiempo real." />
+  <meta name="twitter:image" content="https://www.estacionapro.com/IMG/og-cover.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231e4b8f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fuentes e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="CSS/base/variables.css" />
+  <link rel="stylesheet" href="CSS/base/reset.css" />
+  <link rel="stylesheet" href="CSS/base/base.css" />
+  <link rel="stylesheet" href="CSS/components/buttons.css" />
+  <link rel="stylesheet" href="CSS/components/header.css" />
+  <link rel="stylesheet" href="CSS/components/footer.css" />
+  <link rel="stylesheet" href="CSS/components/cards.css" />
+  <link rel="stylesheet" href="CSS/pages/home.css" />
+
+  <!-- SEO estructurado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ParkingFacility",
+    "name": "EstacionaPro",
+    "description": "Parqueadero con reservas en línea y control de plazas en tiempo real.",
+    "url": "https://www.estacionapro.com/",
+    "telephone": "+57-604-444-0000",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 45 #23-18",
+      "addressLocality": "Medellín",
+      "addressCountry": "CO"
+    },
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+</head>
+<body data-page="inicio">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ===== Header ===== -->
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="EstacionaPro inicio">
+        <span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span>
+        <span>Estaciona<b>Pro</b></span>
+      </a>
+
+      <nav class="nav" data-nav aria-label="Navegación principal">
+        <a class="nav__link" data-page-link="inicio" href="index.html">Inicio</a>
+        <a class="nav__link" data-page-link="tarifas" href="tarifas.html">Tarifas</a>
+        <a class="nav__link" data-page-link="reservar" href="reservar.html">Reservar</a>
+        <a class="nav__link" data-page-link="operacion" href="operacion.html">Operación</a>
+        <a class="nav__link" data-page-link="nosotros" href="nosotros.html">Nosotros</a>
+        <a class="nav__link" data-page-link="contacto" href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Cambiar tema">
+          <i data-theme-icon class="fa-solid fa-moon"></i>
+        </button>
+        <a href="reservar.html" class="btn btn--accent btn--sm header__cta-desktop">Reservar ahora</a>
+        <button class="icon-btn header__toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" data-overlay></div>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div data-reveal>
+          <span class="hero__badge"><span class="dot"></span> Disponibilidad en tiempo real</span>
+          <h1>Estaciona sin filas, <span>reserva en segundos</span></h1>
+          <p class="hero__sub">Plazas cubiertas, accesibles y con cargador eléctrico. Reserva en línea, controla entradas y salidas al instante y paga la tarifa justa según tu tipo de cliente.</p>
+          <div class="hero__actions">
+            <a href="reservar.html" class="btn btn--accent btn--lg"><i class="fa-solid fa-calendar-check"></i> Reservar plaza</a>
+            <a href="tarifas.html" class="btn btn--outline-light btn--lg">Ver tarifas</a>
+          </div>
+          <div class="hero__trust">
+            <div><b>50+</b> plazas activas</div>
+            <div><b>24/7</b> operación</div>
+            <div><b>4</b> tipos de plaza</div>
+          </div>
+        </div>
+
+        <aside class="hero__panel" data-reveal aria-label="Disponibilidad actual">
+          <h3><i class="fa-solid fa-tower-broadcast"></i> Estado del parqueadero</h3>
+          <div class="live-list" data-live-availability>
+            <div class="live-row"><span>Cargando disponibilidad…</span><span class="avail">—</span></div>
+          </div>
+          <a href="operacion.html" class="btn btn--light btn--block" style="margin-top:1.1rem">Ver tablero en vivo</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Stat band ===== -->
+    <div class="container statband">
+      <div class="grid grid--4">
+        <div class="stat" data-reveal><div class="stat__value" data-stat="disponibles">—</div><div class="stat__label">Plazas disponibles ahora</div></div>
+        <div class="stat" data-reveal><div class="stat__value" data-stat="ocupadas">—</div><div class="stat__label">Plazas ocupadas</div></div>
+        <div class="stat" data-reveal><div class="stat__value" data-stat="reparacion">—</div><div class="stat__label">En reparación</div></div>
+        <div class="stat" data-reveal><div class="stat__value" data-stat="ocupacion">—<small>%</small></div><div class="stat__label">Ocupación total</div></div>
+      </div>
+    </div>
+
+    <!-- ===== Características ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Por qué EstacionaPro</span>
+          <h2>Tecnología que hace fácil estacionar</h2>
+          <p>Todo lo que tu vehículo necesita, gestionado en un solo lugar.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card card--hover feature" data-reveal>
+            <div class="feature__icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Reserva instantánea</h3>
+            <p>Elige fecha, hora y tipo de plaza. Recibes un código de reserva único en segundos.</p>
+          </article>
+          <article class="card card--hover feature" data-reveal>
+            <div class="feature__icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+            <h3>Control en tiempo real</h3>
+            <p>Entradas, salidas y plazas ocupadas, disponibles o en reparación siempre actualizadas.</p>
+          </article>
+          <article class="card card--hover feature" data-reveal>
+            <div class="feature__icon"><i class="fa-solid fa-charging-station"></i></div>
+            <h3>Plazas con cargador</h3>
+            <p>Espacios especiales para vehículos eléctricos y plazas accesibles señalizadas.</p>
+          </article>
+          <article class="card card--hover feature" data-reveal>
+            <div class="feature__icon"><i class="fa-solid fa-tags"></i></div>
+            <h3>Tarifas flexibles</h3>
+            <p>Precios diferenciados para clientes temporales, permanentes y miembros.</p>
+          </article>
+          <article class="card card--hover feature" data-reveal>
+            <div class="feature__icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Seguridad 24/7</h3>
+            <p>Vigilancia permanente y registro digital de cada movimiento del vehículo.</p>
+          </article>
+          <article class="card card--hover feature" data-reveal>
+            <div class="feature__icon"><i class="fa-solid fa-id-card"></i></div>
+            <h3>Membresía con ahorro</h3>
+            <p>Los miembros ahorran hasta 20% en cada estadía y tienen prioridad de plaza.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cómo funciona ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Sencillo</span>
+          <h2>Cómo funciona</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="step" data-reveal><h3>Reserva</h3><p>Selecciona el tipo de plaza y la hora de entrada desde tu celular o computador.</p></div>
+          <div class="step" data-reveal><h3>Ingresa</h3><p>Muestra tu código en la entrada; el operador asigna tu plaza y registra el ingreso.</p></div>
+          <div class="step" data-reveal><h3>Sal y paga</h3><p>Al salir se calcula automáticamente el cobro según tu tarifa y tiempo de uso.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <h2>Tu plaza te está esperando</h2>
+          <p>Reserva ahora y olvídate de dar vueltas buscando dónde estacionar.</p>
+          <a href="reservar.html" class="btn btn--accent btn--lg">Reservar mi plaza</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="brand"><span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span><span>Estaciona<b>Pro</b></span></a>
+          <p>Parqueadero inteligente con reservas en línea y control de operación en tiempo real.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li>
+            <li><a href="reservar.html">Reservar</a></li>
+            <li><a href="operacion.html">Operación</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="admin.html">Panel admin</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i>Houston, Texas</li>
+            <li><i class="fa-solid fa-phone"></i> +57 XXX XXX XXXX</li>
+            <li><i class="fa-solid fa-envelope"></i> hola@estacionapro.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> EstacionaPro. Todos los derechos reservados.</span>
+        <span>Hecho con tecnología propia · Houston, Texas, United States US</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="JS/pages/inicio.js"></script>
+</body>
+</html>

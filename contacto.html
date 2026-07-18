@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10294c" />
+  <title>Contacto | EstacionaPro</title>
+  <meta name="description" content="Contáctanos en EstacionaPro. Escríbenos por dudas sobre reservas, tarifas, membresías o alianzas empresariales. Estamos en Medellín, atención 24/7." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.estacionapro.com/contacto.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contacto | EstacionaPro" />
+  <meta property="og:description" content="Escríbenos por reservas, tarifas o alianzas." />
+  <meta property="og:url" content="https://www.estacionapro.com/contacto.html" />
+  <meta property="og:image" content="https://www.estacionapro.com/IMG/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231e4b8f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/base/variables.css" />
+  <link rel="stylesheet" href="CSS/base/reset.css" />
+  <link rel="stylesheet" href="CSS/base/base.css" />
+  <link rel="stylesheet" href="CSS/components/buttons.css" />
+  <link rel="stylesheet" href="CSS/components/header.css" />
+  <link rel="stylesheet" href="CSS/components/footer.css" />
+  <link rel="stylesheet" href="CSS/components/cards.css" />
+  <link rel="stylesheet" href="CSS/components/forms.css" />
+  <link rel="stylesheet" href="CSS/pages/pages.css" />
+</head>
+<body data-page="contacto">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="EstacionaPro inicio">
+        <span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span>
+        <span>Estaciona<b>Pro</b></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Navegación principal">
+        <a class="nav__link" data-page-link="inicio" href="index.html">Inicio</a>
+        <a class="nav__link" data-page-link="tarifas" href="tarifas.html">Tarifas</a>
+        <a class="nav__link" data-page-link="reservar" href="reservar.html">Reservar</a>
+        <a class="nav__link" data-page-link="operacion" href="operacion.html">Operación</a>
+        <a class="nav__link" data-page-link="nosotros" href="nosotros.html">Nosotros</a>
+        <a class="nav__link" data-page-link="contacto" href="contacto.html">Contacto</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Cambiar tema"><i data-theme-icon class="fa-solid fa-moon"></i></button>
+        <a href="reservar.html" class="btn btn--accent btn--sm header__cta-desktop">Reservar ahora</a>
+        <button class="icon-btn header__toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" data-overlay></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb"><a href="index.html">Inicio</a> / Contacto</p>
+        <h1>Hablemos</h1>
+        <p>¿Dudas sobre reservas, tarifas o membresías? Escríbenos y te respondemos pronto.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div data-reveal>
+          <h2 style="font-size:1.4rem;margin-bottom:1.4rem">Información de contacto</h2>
+          <ul class="contact-info">
+            <li><i class="fa-solid fa-location-dot"></i><div><b>Dirección</b><span>Houston, Texas</span></div></li>
+            <li><i class="fa-solid fa-phone"></i><div><b>Teléfono</b><span>+1 123 456 7890</span></div></li>
+            <li><i class="fa-solid fa-envelope"></i><div><b>Correo</b><span>hola@estacionapro.com</span></div></li>
+            <li><i class="fa-solid fa-clock"></i><div><b>Horario</b><span>Abierto 24 horas, todos los días</span></div></li>
+          </ul>
+          <div class="map-embed">
+            <iframe title="Ubicación EstacionaPro" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-96.39266967773439%2C29.321128153792202%2C-94.87243652343751%2C30.32547125932808&amp;layer=mapnik"></iframe>
+          </div>
+        </div>
+
+        <div class="reserva-card" data-reveal>
+          <h2 style="font-size:1.4rem;margin-bottom:1.4rem"><i class="fa-solid fa-paper-plane"></i> Envíanos un mensaje</h2>
+          <form data-contacto-form novalidate>
+            <div class="field">
+              <label for="c-nombre">Nombre</label>
+              <input id="c-nombre" class="input" maxlength="80" required />
+              <p class="field__error">Ingresa tu nombre.</p>
+            </div>
+            <div class="field">
+              <label for="c-email">Correo</label>
+              <input id="c-email" type="email" class="input" maxlength="120" required />
+              <p class="field__error">Correo inválido.</p>
+            </div>
+            <div class="field">
+              <label for="c-asunto">Asunto</label>
+              <select id="c-asunto" class="select">
+                <option>Reservas</option>
+                <option>Tarifas y membresías</option>
+                <option>Alianzas empresariales</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-mensaje">Mensaje</label>
+              <textarea id="c-mensaje" class="textarea" maxlength="1000" required></textarea>
+              <p class="field__error">Escribe tu mensaje.</p>
+            </div>
+            <div class="alert alert--ok" data-contacto-ok style="display:none"><i class="fa-solid fa-circle-check"></i> ¡Gracias! Tu mensaje fue enviado. Te contactaremos pronto.</div>
+            <button class="btn btn--accent btn--lg btn--block" type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="brand"><span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span><span>Estaciona<b>Pro</b></span></a>
+          <p>Parqueadero inteligente con reservas en línea y control de operación en tiempo real.</p>
+          <div class="footer__social"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
+        </div>
+        <div class="footer__col"><h4>Navegación</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="tarifas.html">Tarifas</a></li><li><a href="reservar.html">Reservar</a></li><li><a href="operacion.html">Operación</a></li></ul></div>
+        <div class="footer__col"><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="admin.html">Panel admin</a></li></ul></div>
+        <div class="footer__col"><h4>Contacto</h4><ul><li><i class="fa-solid fa-location-dot"></i> Houston, Texas</li><li><i class="fa-solid fa-phone"></i> +1 123 456 7890</li><li><i class="fa-solid fa-envelope"></i> hola@estacionapro.com</li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> EstacionaPro. Todos los derechos reservados.</span><span>Houston, Texas, United States US</span></div>
+    </div>
+  </footer>
+
+  <script type="module" src="JS/pages/contacto.js"></script>
+</body>
+</html>

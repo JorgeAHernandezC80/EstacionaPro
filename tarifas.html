@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10294c" />
+  <title>Tarifas de estacionamiento | EstacionaPro</title>
+  <meta name="description" content="Consulta las tarifas de EstacionaPro por hora según el tipo de plaza y el tipo de cliente: temporal o permanente, con o sin membresía. Precios claros y sin sorpresas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.estacionapro.com/tarifas.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tarifas de estacionamiento | EstacionaPro" />
+  <meta property="og:description" content="Precios por hora según tipo de plaza y cliente. Ahorra con membresía." />
+  <meta property="og:url" content="https://www.estacionapro.com/tarifas.html" />
+  <meta property="og:image" content="https://www.estacionapro.com/IMG/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231e4b8f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/base/variables.css" />
+  <link rel="stylesheet" href="CSS/base/reset.css" />
+  <link rel="stylesheet" href="CSS/base/base.css" />
+  <link rel="stylesheet" href="CSS/components/buttons.css" />
+  <link rel="stylesheet" href="CSS/components/header.css" />
+  <link rel="stylesheet" href="CSS/components/footer.css" />
+  <link rel="stylesheet" href="CSS/components/cards.css" />
+  <link rel="stylesheet" href="CSS/pages/pages.css" />
+</head>
+<body data-page="tarifas">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="EstacionaPro inicio">
+        <span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span>
+        <span>Estaciona<b>Pro</b></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Navegación principal">
+        <a class="nav__link" data-page-link="inicio" href="index.html">Inicio</a>
+        <a class="nav__link" data-page-link="tarifas" href="tarifas.html">Tarifas</a>
+        <a class="nav__link" data-page-link="reservar" href="reservar.html">Reservar</a>
+        <a class="nav__link" data-page-link="operacion" href="operacion.html">Operación</a>
+        <a class="nav__link" data-page-link="nosotros" href="nosotros.html">Nosotros</a>
+        <a class="nav__link" data-page-link="contacto" href="contacto.html">Contacto</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Cambiar tema"><i data-theme-icon class="fa-solid fa-moon"></i></button>
+        <a href="reservar.html" class="btn btn--accent btn--sm header__cta-desktop">Reservar ahora</a>
+        <button class="icon-btn header__toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" data-overlay></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb"><a href="index.html">Inicio</a> / Tarifas</p>
+        <h1>Tarifas claras, sin sorpresas</h1>
+        <p>El precio por hora depende del tipo de plaza y de tu tipo de cliente. Los clientes permanentes y los miembros pagan menos.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Planes de cliente</span>
+          <h2>Elige cómo quieres pagar</h2>
+          <p>Combina tu segmento con o sin membresía y mira el precio por hora de cada plaza.</p>
+        </div>
+        <div class="price-grid" data-plan-cards></div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Comparativa completa</span>
+          <h2>Precio por hora según plaza y cliente</h2>
+        </div>
+        <div class="pricing-tabs" data-pricing-tabs></div>
+        <div class="table-wrap" data-reveal>
+          <table class="data">
+            <thead>
+              <tr><th>Tipo de plaza</th><th>Precio base / hora</th><th>Precio con este plan / hora</th><th>Ahorro</th></tr>
+            </thead>
+            <tbody data-pricing-body></tbody>
+          </table>
+        </div>
+        <p class="lead" style="text-align:center;margin-top:1.6rem;font-size:.95rem">La membresía cuesta <b>$39/mes</b> e incluye 20% de descuento en todas las estadías y prioridad de plaza.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="brand"><span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span><span>Estaciona<b>Pro</b></span></a>
+          <p>Parqueadero inteligente con reservas en línea y control de operación en tiempo real.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>Navegación</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="tarifas.html">Tarifas</a></li><li><a href="reservar.html">Reservar</a></li><li><a href="operacion.html">Operación</a></li></ul></div>
+        <div class="footer__col"><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="admin.html">Panel admin</a></li></ul></div>
+        <div class="footer__col"><h4>Contacto</h4><ul><li><i class="fa-solid fa-location-dot"></i> Calle 45 #23-18, Medellín</li><li><i class="fa-solid fa-phone"></i> +57 604 444 0000</li><li><i class="fa-solid fa-envelope"></i> hola@estacionapro.com</li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> EstacionaPro. Todos los derechos reservados.</span><span>Medellín, Colombia</span></div>
+    </div>
+  </footer>
+
+  <script type="module" src="JS/pages/tarifas.js"></script>
+</body>
+</html>

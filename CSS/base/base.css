@@ -1,0 +1,64 @@
+/* EstacionaPro — Estilos base y utilidades de layout */
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+}
+
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--section-y); }
+.section--soft { background: var(--bg-soft); }
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brand-500);
+  margin-bottom: .8rem;
+}
+.section-head h2 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  color: var(--text);
+}
+.section-head p {
+  margin-top: .9rem;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.text-accent { color: var(--accent-500); }
+.text-brand  { color: var(--brand-500); }
+
+.grid { display: grid; gap: var(--gap); }
+.grid--2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid--4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+.lead { font-size: 1.12rem; color: var(--text-soft); }
+
+/* Animación de entrada al hacer scroll */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}

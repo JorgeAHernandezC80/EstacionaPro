@@ -1,0 +1,58 @@
+/* EstacionaPro — Formularios */
+.field { display: grid; gap: .4rem; margin-bottom: 1.1rem; }
+.field > label {
+  font-size: .9rem;
+  font-weight: 600;
+  font-family: var(--font-head);
+  color: var(--text);
+}
+.field .hint { font-size: .82rem; color: var(--text-muted); }
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: .8rem 1rem;
+  background: var(--bg-elev);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--brand-400);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 22%, transparent);
+}
+.textarea { resize: vertical; min-height: 120px; }
+
+.field--error .input, .field--error .select { border-color: var(--danger-500); }
+.field__error {
+  color: var(--danger-500);
+  font-size: .82rem;
+  display: none;
+}
+.field--error .field__error { display: block; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+/* Grupo de opciones (segmento / membresía / plaza) */
+.choice-group { display: grid; gap: .7rem; }
+.choice-group--row { grid-auto-flow: column; grid-auto-columns: 1fr; }
+@media (max-width: 560px) { .choice-group--row { grid-auto-flow: row; } }
+
+.choice {
+  position: relative;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: .95rem 1rem;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.choice__title { font-weight: 600; font-family: var(--font-head); display: flex; align-items: center; gap: .5rem; }
+.choice__desc { font-size: .84rem; color: var(--text-muted); margin-top: .2rem; }
+.choice:has(input:checked) {
+  border-color: var(--brand-500);
+  background: color-mix(in srgb, var(--brand-500) 8%, transparent);
+}
+.choice:has(input:checked) .choice__title { color: var(--brand-600); }

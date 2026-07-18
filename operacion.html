@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10294c" />
+  <title>Operación en tiempo real | EstacionaPro</title>
+  <meta name="description" content="Tablero de operación de EstacionaPro: registra entradas y salidas de vehículos, controla plazas disponibles, ocupadas y en reparación, y calcula el cobro al instante." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://www.estacionapro.com/operacion.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231e4b8f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/base/variables.css" />
+  <link rel="stylesheet" href="CSS/base/reset.css" />
+  <link rel="stylesheet" href="CSS/base/base.css" />
+  <link rel="stylesheet" href="CSS/components/buttons.css" />
+  <link rel="stylesheet" href="CSS/components/header.css" />
+  <link rel="stylesheet" href="CSS/components/footer.css" />
+  <link rel="stylesheet" href="CSS/components/cards.css" />
+  <link rel="stylesheet" href="CSS/components/forms.css" />
+  <link rel="stylesheet" href="CSS/pages/pages.css" />
+  <link rel="stylesheet" href="CSS/pages/reservar.css" />
+  <link rel="stylesheet" href="CSS/pages/panel.css" />
+</head>
+<body data-page="operacion">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="EstacionaPro inicio">
+        <span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span>
+        <span>Estaciona<b>Pro</b></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Navegación principal">
+        <a class="nav__link" data-page-link="inicio" href="index.html">Inicio</a>
+        <a class="nav__link" data-page-link="tarifas" href="tarifas.html">Tarifas</a>
+        <a class="nav__link" data-page-link="reservar" href="reservar.html">Reservar</a>
+        <a class="nav__link" data-page-link="operacion" href="operacion.html">Operación</a>
+        <a class="nav__link" data-page-link="nosotros" href="nosotros.html">Nosotros</a>
+        <a class="nav__link" data-page-link="contacto" href="contacto.html">Contacto</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Cambiar tema"><i data-theme-icon class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn header__toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" data-overlay></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb"><a href="index.html">Inicio</a> / Operación</p>
+        <h1>Tablero de operación</h1>
+        <p>Entradas, salidas y estado de cada plaza en tiempo real. Acceso para operadores.</p>
+      </div>
+    </section>
+
+    <!-- Login gate -->
+    <section class="section gate" data-gate>
+      <div class="reserva-card">
+        <div class="gate__icon"><i class="fa-solid fa-lock"></i></div>
+        <h2>Acceso de operador</h2>
+        <p class="lead" style="margin:.4rem 0 1.4rem">Ingresa la clave para gestionar la operación.</p>
+        <form data-login-form>
+          <div class="field">
+            <input type="password" class="input" data-login-pass placeholder="Clave de operador" required />
+          </div>
+          <div class="alert alert--danger" data-login-error style="display:none"></div>
+          <button class="btn btn--primary btn--block" type="submit">Ingresar</button>
+        </form>
+        <p class="summary__note" style="margin-top:1rem">Demo: clave <code>estaciona-admin</code></p>
+      </div>
+    </section>
+
+    <!-- Panel -->
+    <section class="section" data-panel style="display:none">
+      <div class="container">
+        <div class="opsbar">
+          <div class="stat"><i class="fa-solid fa-square-parking i-info"></i><div><div class="stat__value" data-op="total">—</div><div class="stat__label">Plazas totales</div></div></div>
+          <div class="stat"><i class="fa-solid fa-circle-check i-ok"></i><div><div class="stat__value" data-op="disponible">—</div><div class="stat__label">Disponibles</div></div></div>
+          <div class="stat"><i class="fa-solid fa-car i-busy"></i><div><div class="stat__value" data-op="ocupada">—</div><div class="stat__label">Ocupadas</div></div></div>
+          <div class="stat"><i class="fa-solid fa-screwdriver-wrench i-rep"></i><div><div class="stat__value" data-op="reparacion">—</div><div class="stat__label">En reparación</div></div></div>
+        </div>
+
+        <div class="ops-layout">
+          <div class="reserva-card">
+            <h2 style="font-size:1.2rem"><i class="fa-solid fa-table-cells"></i> Mapa de plazas</h2>
+            <div class="board-legend">
+              <span><span class="dot-legend" style="background:var(--ok-500)"></span> Disponible</span>
+              <span><span class="dot-legend" style="background:var(--danger-500)"></span> Ocupada</span>
+              <span><span class="dot-legend" style="background:var(--warn-500)"></span> Reparación</span>
+              <span style="color:var(--text-muted)">Clic en una plaza para gestionarla</span>
+            </div>
+            <div class="board" data-board></div>
+          </div>
+
+          <aside class="reserva-card">
+            <h2 style="font-size:1.2rem"><i class="fa-solid fa-right-to-bracket"></i> Registrar entrada</h2>
+            <form data-entrada-form>
+              <div class="field">
+                <label for="e-placa">Placa</label>
+                <input id="e-placa" class="input" placeholder="ABC123" maxlength="10" required />
+              </div>
+              <div class="field">
+                <label for="e-vehiculo">Vehículo</label>
+                <select id="e-vehiculo" class="select" data-e-vehiculos></select>
+              </div>
+              <div class="field">
+                <label for="e-plaza">Tipo de plaza</label>
+                <select id="e-plaza" class="select" data-e-plazas></select>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="e-segmento">Cliente</label>
+                  <select id="e-segmento" class="select" data-e-segmentos></select>
+                </div>
+                <div class="field">
+                  <label for="e-membresia">Membresía</label>
+                  <select id="e-membresia" class="select" data-e-membresias></select>
+                </div>
+              </div>
+              <div class="alert alert--danger" data-entrada-error style="display:none"></div>
+              <div class="alert alert--ok" data-entrada-ok style="display:none"></div>
+              <button class="btn btn--accent btn--block" type="submit"><i class="fa-solid fa-car-side"></i> Registrar ingreso</button>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal salida -->
+  <div class="modal" data-modal>
+    <div class="modal__card">
+      <h3><i class="fa-solid fa-right-from-bracket"></i> Salida de vehículo</h3>
+      <div data-modal-body></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="brand"><span class="brand__mark"><i class="fa-solid fa-square-parking"></i></span><span>Estaciona<b>Pro</b></span></a>
+          <p>Parqueadero inteligente con reservas en línea y control de operación en tiempo real.</p>
+        </div>
+        <div class="footer__col"><h4>Navegación</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="tarifas.html">Tarifas</a></li><li><a href="reservar.html">Reservar</a></li><li><a href="operacion.html">Operación</a></li></ul></div>
+        <div class="footer__col"><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="admin.html">Panel admin</a></li></ul></div>
+        <div class="footer__col"><h4>Contacto</h4><ul><li><i class="fa-solid fa-location-dot"></i> Calle 45 #23-18, Medellín</li><li><i class="fa-solid fa-phone"></i> +57 604 444 0000</li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> EstacionaPro.</span><span>Medellín, Colombia</span></div>
+    </div>
+  </footer>
+
+  <script type="module" src="JS/pages/operacion.js"></script>
+</body>
+</html>

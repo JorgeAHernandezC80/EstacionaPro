@@ -1,0 +1,45 @@
+/* EstacionaPro — Página de reserva */
+.reserva-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2.2rem; align-items: start; }
+
+.reserva-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(1.4rem, 3vw, 2.2rem); box-shadow: var(--sh-sm); }
+.reserva-card h2 { font-size: 1.35rem; margin-bottom: 1.4rem; display: flex; align-items: center; gap: .6rem; }
+
+.plaza-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; }
+.plaza-opt {
+  position: relative; border: 1.5px solid var(--border); border-radius: var(--r-md);
+  padding: 1rem; cursor: pointer; text-align: center; transition: all var(--transition);
+}
+.plaza-opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.plaza-opt i { font-size: 1.5rem; color: var(--brand-500); }
+.plaza-opt .name { font-weight: 600; font-family: var(--font-head); margin-top: .4rem; font-size: .95rem; }
+.plaza-opt .rate { font-size: .82rem; color: var(--text-muted); }
+.plaza-opt .avail { font-size: .78rem; margin-top: .3rem; font-weight: 600; }
+.plaza-opt:has(input:checked) { border-color: var(--brand-500); background: color-mix(in srgb, var(--brand-500) 8%, transparent); }
+.plaza-opt:has(input:disabled) { opacity: .5; cursor: not-allowed; }
+
+/* Resumen lateral */
+.summary { position: sticky; top: calc(var(--header-h) + 1rem); }
+.summary__row { display: flex; justify-content: space-between; padding: .55rem 0; color: var(--text-soft); font-size: .95rem; border-bottom: 1px dashed var(--border); }
+.summary__row span:last-child { color: var(--text); font-weight: 600; }
+.summary__total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 1rem; }
+.summary__total .amount { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--brand-600); }
+.summary__note { margin-top: 1rem; font-size: .84rem; color: var(--text-muted); }
+
+/* Confirmación */
+.confirm {
+  text-align: center; background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: clamp(2rem, 5vw, 3rem); box-shadow: var(--sh-md);
+}
+.confirm__icon { font-size: 3.5rem; color: var(--ok-500); }
+.confirm h2 { margin: 1rem 0 .4rem; }
+.confirm__code {
+  display: inline-block; margin-top: 1.2rem; padding: .6rem 1.2rem;
+  background: var(--bg-soft); border-radius: var(--r-full);
+  font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; color: var(--brand-600);
+  letter-spacing: .04em;
+}
+.confirm__details { margin: 1.6rem auto 0; max-width: 380px; text-align: left; display: grid; gap: .5rem; }
+.confirm__details div { display: flex; justify-content: space-between; font-size: .95rem; }
+.confirm__details span:first-child { color: var(--text-muted); }
+
+@media (max-width: 880px) { .reserva-layout { grid-template-columns: 1fr; } .summary { position: static; } }

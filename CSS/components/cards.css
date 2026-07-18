@@ -1,0 +1,61 @@
+/* EstacionaPro — Tarjetas y elementos reutilizables */
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.8rem;
+  box-shadow: var(--sh-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.card--hover:hover { transform: translateY(-6px); box-shadow: var(--sh-md); border-color: var(--brand-300); }
+
+.feature__icon {
+  display: grid; place-items: center;
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  margin-bottom: 1.1rem;
+  background: color-mix(in srgb, var(--brand-500) 14%, transparent);
+  color: var(--brand-500);
+}
+.feature h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.feature p { color: var(--text-soft); font-size: .97rem; }
+
+/* Badges de estado */
+.badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .28rem .7rem;
+  border-radius: var(--r-full);
+  font-size: .78rem;
+  font-weight: 600;
+  font-family: var(--font-head);
+}
+.badge--ok        { background: color-mix(in srgb, var(--ok-500) 16%, transparent);     color: var(--ok-500); }
+.badge--warn      { background: color-mix(in srgb, var(--warn-500) 16%, transparent);   color: var(--warn-500); }
+.badge--danger    { background: color-mix(in srgb, var(--danger-500) 16%, transparent); color: var(--danger-500); }
+.badge--info      { background: color-mix(in srgb, var(--info-500) 16%, transparent);   color: var(--info-500); }
+.badge--muted     { background: var(--bg-soft); color: var(--text-muted); }
+
+/* Chips de dato */
+.stat {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--sh-sm);
+}
+.stat__value { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1; }
+.stat__label { margin-top: .4rem; color: var(--text-soft); font-size: .9rem; }
+.stat__value small { font-size: 1rem; color: var(--text-muted); font-weight: 600; }
+
+/* Notas / alertas */
+.alert {
+  border-radius: var(--r-md);
+  padding: .9rem 1.1rem;
+  font-size: .95rem;
+  display: flex; gap: .6rem; align-items: flex-start;
+}
+.alert i { margin-top: .15rem; }
+.alert--ok     { background: color-mix(in srgb, var(--ok-500) 12%, transparent);     color: var(--ok-500); }
+.alert--danger { background: color-mix(in srgb, var(--danger-500) 12%, transparent); color: var(--danger-500); }
+.alert--info   { background: color-mix(in srgb, var(--info-500) 12%, transparent);   color: var(--info-500); }

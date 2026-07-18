@@ -1,0 +1,54 @@
+/* EstacionaPro — Footer */
+.footer {
+  background: var(--brand-900);
+  color: #c9d6ea;
+  padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
+}
+.footer a { color: #c9d6ea; transition: color var(--transition); }
+.footer a:hover { color: #fff; }
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.footer__brand .brand { color: #fff; }
+.footer__brand p { margin-top: 1rem; max-width: 34ch; color: #9fb1cc; }
+
+.footer__col h4 {
+  font-size: .95rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: .02em;
+}
+.footer__col ul { display: grid; gap: .6rem; }
+.footer__col li { font-size: .95rem; color: #9fb1cc; }
+.footer__col li i { width: 1.2em; color: var(--accent-500); margin-right: .4rem; }
+
+.footer__social { display: flex; gap: .6rem; margin-top: 1.2rem; }
+.footer__social a {
+  display: grid; place-items: center;
+  width: 40px; height: 40px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,.08);
+}
+.footer__social a:hover { background: var(--brand-600); }
+
+.footer__bottom {
+  margin-top: 2.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .6rem;
+  font-size: .88rem;
+  color: #8ea3c2;
+}
+
+@media (max-width: 780px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,60 @@
+/* EstacionaPro — Operación (tablero) y panel admin */
+
+/* Login gate */
+.gate { max-width: 420px; margin: clamp(2rem,6vw,4rem) auto; }
+.gate .reserva-card { text-align: center; }
+.gate__icon { font-size: 2.6rem; color: var(--brand-500); margin-bottom: .6rem; }
+
+/* Barra de resumen */
+.opsbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 1rem; margin-bottom: 1.8rem; }
+.opsbar .stat { display: flex; align-items: center; gap: .9rem; }
+.opsbar .stat i { font-size: 1.4rem; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 12px; }
+.i-ok    { background: color-mix(in srgb, var(--ok-500) 16%, transparent);     color: var(--ok-500); }
+.i-busy  { background: color-mix(in srgb, var(--danger-500) 16%, transparent); color: var(--danger-500); }
+.i-rep   { background: color-mix(in srgb, var(--warn-500) 16%, transparent);   color: var(--warn-500); }
+.i-info  { background: color-mix(in srgb, var(--info-500) 16%, transparent);   color: var(--info-500); }
+
+/* Tablero de plazas */
+.board { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: .6rem; }
+.slot {
+  aspect-ratio: 1; border-radius: var(--r-sm);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 1.5px solid var(--border); background: var(--bg-elev);
+  font-family: var(--font-head); font-weight: 700; font-size: .85rem;
+  cursor: pointer; transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+.slot:hover { transform: translateY(-3px); box-shadow: var(--sh-sm); }
+.slot small { font-weight: 500; font-size: .68rem; color: var(--text-muted); margin-top: .15rem; }
+.slot--disponible { border-color: color-mix(in srgb, var(--ok-500) 45%, var(--border)); }
+.slot--disponible::after { content:""; position:absolute; top:6px; right:6px; width:8px; height:8px; border-radius:50%; background: var(--ok-500); }
+.slot--ocupada { background: color-mix(in srgb, var(--danger-500) 12%, var(--bg-elev)); border-color: color-mix(in srgb, var(--danger-500) 40%, var(--border)); }
+.slot--ocupada::after { content:""; position:absolute; top:6px; right:6px; width:8px; height:8px; border-radius:50%; background: var(--danger-500); }
+.slot--reparacion { background: repeating-linear-gradient(45deg, var(--bg-soft), var(--bg-soft) 6px, transparent 6px, transparent 12px); border-color: var(--warn-500); color: var(--warn-500); }
+
+.board-legend { display: flex; gap: 1.2rem; flex-wrap: wrap; margin: 1rem 0 1.6rem; font-size: .85rem; color: var(--text-soft); }
+.board-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.dot-legend { width: 11px; height: 11px; border-radius: 50%; }
+
+/* Panel de acción lateral */
+.ops-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: start; }
+@media (max-width: 900px) { .ops-layout { grid-template-columns: 1fr; } }
+
+/* Tablas admin */
+.admin-toolbar { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.4rem; }
+.admin-toolbar .select, .admin-toolbar .input { width: auto; }
+.select-estado {
+  padding: .35rem .6rem; border-radius: var(--r-sm);
+  border: 1.5px solid var(--border); background: var(--bg-elev); color: var(--text); font-size: .85rem;
+}
+
+/* Modal salida */
+.modal { position: fixed; inset: 0; background: rgba(6,15,30,.55); display: none; place-items: center; z-index: 200; padding: 1rem; }
+.modal.is-open { display: grid; }
+.modal__card { background: var(--bg-elev); border-radius: var(--r-lg); padding: 2rem; max-width: 440px; width: 100%; box-shadow: var(--sh-lg); }
+.modal__card h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+.ticket { display: grid; gap: .5rem; margin: 1rem 0; }
+.ticket div { display: flex; justify-content: space-between; font-size: .95rem; }
+.ticket div span:first-child { color: var(--text-muted); }
+.ticket .grand { border-top: 1px solid var(--border); padding-top: .6rem; margin-top: .3rem; }
+.ticket .grand b { font-family: var(--font-head); font-size: 1.5rem; color: var(--brand-600); }
