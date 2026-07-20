@@ -6,7 +6,15 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "lint:js": "eslint \"JS/**/*.js\" \"*.js\"",
+    "lint:css": "stylelint \"CSS/**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css",
+    "format": "prettier --write \"JS/**/*.js\" \"CSS/**/*.css\" \"*.html\"",
+    "build:css": "node scripts/build.js css",
+    "build:js": "node scripts/build.js js",
+    "build": "node scripts/build.js all",
+    "validate:html": "html-validate \"*.html\""
   },
   "keywords": [
     "parking",
@@ -27,7 +35,14 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "supertest": "^6.3.4"
+    "supertest": "^6.3.4",
+    "eslint": "^9.9.0",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^36.0.1",
+    "prettier": "^3.3.3",
+    "clean-css": "^5.3.3",
+    "esbuild": "^0.23.1",
+    "html-validate": "^8.24.0"
   },
   "jest": {
     "testEnvironment": "node",

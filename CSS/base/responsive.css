@@ -1,0 +1,64 @@
+/* EstacionaPro — Capa de adaptabilidad extendida
+   Complementa las media queries ya existentes en components/ y pages/.
+   Cubre: móviles pequeños, tablets, pantallas grandes/TV, dispositivos táctiles
+   y preferencias de accesibilidad (contraste, movimiento). */
+
+/* ---------- Móviles muy pequeños (≤ 380px) ---------- */
+@media (max-width: 380px) {
+  :root { --header-h: 64px; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__trust { flex-wrap: wrap; gap: .75rem; }
+  .section-head h2 { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+}
+
+/* ---------- Tablets verticales / horizontales (601px - 1024px) ---------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .hero__inner { gap: clamp(1.5rem, 4vw, 2.5rem); }
+}
+
+/* ---------- Escritorio grande / monitores anchos (≥ 1440px) ---------- */
+@media (min-width: 1440px) {
+  :root { --container: 1320px; }
+}
+
+/* ---------- Pantallas muy grandes / Smart TV (≥ 1920px, uso a distancia) ---------- */
+@media (min-width: 1920px) {
+  :root {
+    --container: 1600px;
+    --section-y: clamp(5rem, 6vw, 8rem);
+  }
+  html { font-size: 19px; } /* legibilidad a distancia de sofá */
+  .btn { font-size: 1.05em; }
+  :focus-visible { outline-width: 4px; outline-offset: 4px; } /* navegación con control remoto */
+}
+
+/* ---------- Dispositivos táctiles: objetivos de toque más grandes ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .icon-btn { width: 46px; height: 46px; }
+  .nav__link, .btn { min-height: 44px; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+/* ---------- Orientación horizontal en móviles (viewport bajo) ---------- */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 480px) {
+  .hero { padding-block: 2rem; }
+  .nav { inset: var(--header-h) 0 auto 0; max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+}
+
+/* ---------- Preferencia de alto contraste ---------- */
+@media (prefers-contrast: more) {
+  :root {
+    --border: #5a6b85;
+    --text-soft: #2c3a4f;
+  }
+  .btn, .icon-btn { border-width: 2px; }
+}
+
+/* ---------- Impresión (útil para comprobantes de reserva / tarifas) ---------- */
+@media print {
+  .header, .footer, .overlay, [data-nav-toggle], [data-theme-toggle] { display: none !important; }
+  body { background: #fff; color: #000; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: .8em; }
+}
